@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bb ko</title>
+  <link rel="stylesheet" href="ko.css">
+</head>
+<body>
+  <h1>Guess who I love</h1>
+  <img src="love.jpg" alt="??" id="heart-img">
+  <p>Of course, it's you, pookie!</p>
+
+  
+  <a href="letter.html" class="lovely-button">Press me</a>
+
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const heartImage = document.querySelector("img");
+        const button = document.querySelector(".lovely-button");
+
+        // for pc
+        heartImage.addEventListener("mouseenter", () => {
+            heartImage.classList.add("active");
+            button.classList.add("visible");
+        });
+
+        heartImage.addEventListener("mouseleave", () => {
+            heartImage.classList.remove("active");
+            button.classList.add("persist"); 
+        });
+
+        // for phone click
+        button.addEventListener("click", () => {
+            console.log("Button clicked!"); 
+        });
+
+        heartImage.addEventListener("click", () => {
+            heartImage.classList.toggle("active");
+            button.classList.add("visible");
+            button.classList.add("clicked"); // Keep the button visible after click
+        });
+    
+    });
+  </script>
+</body>
+</html>
